@@ -13,7 +13,6 @@ from HC_Lib.create_quick_reply import create_quick_reply
 
 app = Flask(__name__)
 
-# read config from file
 with open("config.yaml", 'r') as f:
     config = yaml.safe_load(f)
 
@@ -66,7 +65,6 @@ def pretty_echo(event):
                 result_message += f"{key}\n"
             #
             quick_reply_items = create_quick_reply(film_name)
-            # print(len(quick_reply_items))
             message = TextSendMessage(text="以下是目前上映中的電影：",
                                       quick_reply=quick_reply_items
                                       )
@@ -106,4 +104,4 @@ def pretty_echo(event):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=33507)
