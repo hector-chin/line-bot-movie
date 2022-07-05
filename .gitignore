@@ -1,0 +1,6 @@
+venv/
+config.yaml
+line_bot.md
+function_test.py
+.git
+
