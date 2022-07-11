@@ -56,7 +56,12 @@ def pretty_echo(event):
         ####
         result_message = "沒有這部電影資訊或已下檔，請輸入別的電影名稱"
         print(f"\n\nreply token is {event.reply_token}\n\n")
-
+        if event.message.text == "找影城":
+            result_message = "此功能開發中，目前無法使用"
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=result_message)
+            )
         if event.message.text == "電影名稱":
             result_message = ''
             film_name = []
